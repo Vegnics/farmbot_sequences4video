@@ -62,7 +62,7 @@ gripper_down = 0
 gripper_up = 1
 device.set_pin_io_mode(1,gripper_pin)
 for i in range(10):
-    checktool()
+  checktool()
   sleep(1)
 
 device.log(message='Process_finished', message_type='success')  
