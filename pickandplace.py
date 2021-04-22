@@ -45,9 +45,6 @@ device.log(message='Libraries ok', message_type='success')
 fw_name="Taking_photo"
 #tray_num = get_config_value(fw_name,config_name="Tray",value_type=int)
 
-checkUTM_thread = RepeatedTimer(0.5,checktool)
-checkUTM_thread.start()
-device.log(message='thread created', message_type='success') 
 
 #butt_kernel = np.load(dir_path+'/'+'kernel_butt.npy')
 #descriptors = np.load(dir_path+'/'+'all_descriptors.npy')
@@ -65,6 +62,7 @@ gripper_down = 0
 gripper_up = 1
 device.set_pin_io_mode(1,gripper_pin)
 for i in range(10):
+    checktool()
   sleep(1)
 
 checkUTM_thread.cancel()
