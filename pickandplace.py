@@ -47,6 +47,7 @@ fw_name="Taking_photo"
 
 checkUTM_thread = RepeatedTimer(0.5,checktool)
 checkUTM_thread.start()
+device.log(message='thread created', message_type='success') 
 
 #butt_kernel = np.load(dir_path+'/'+'kernel_butt.npy')
 #descriptors = np.load(dir_path+'/'+'all_descriptors.npy')
