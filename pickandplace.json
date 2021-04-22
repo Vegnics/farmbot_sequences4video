@@ -7,7 +7,7 @@
  "version": "1.0.0",
  "min_os_version_major": 6,
  "url": "https://raw.githubusercontent.com/Vegnics/farmbot_sequences4video/main/pickandplace.json",
- "zip": "https://github.com/Vegnics/farmbot_sequences4video/archive/main.zip",
+ "zip": "https://github.com/Vegnics/farmbot_sequences4video/archive/refs/heads/main.zip",
  "executable": "python",
  "args": ["farmbot_sequences4video-main/pickandplace.py"]
 }
