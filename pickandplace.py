@@ -65,6 +65,5 @@ for i in range(10):
     checktool()
   sleep(1)
 
-checkUTM_thread.cancel()
 device.log(message='Process_finished', message_type='success')  
 
