@@ -34,7 +34,7 @@ class RepeatedTimer:
         self._timer.cancel()
 
 def checktool():
-  status = device.read_pin(_veri_pin,"aaa",0)
+  status = device.get_pin_value(_veri_pin)
   device.log(message='status: {}'.format(status), message_type='success')
   return
 
@@ -65,5 +65,7 @@ gripper_up = 1
 device.set_pin_io_mode(1,gripper_pin)
 for i in range(10):
   sleep(1)
-  
+
+checkUTM_thread.cancel()
+device.log(message='Process_finished', message_type='success')  
 
