@@ -1,0 +1,13 @@
+
+{
+ "package": "Pick_and_place_v1",
+ "language": "python",
+ "author": "Paulo Linares",
+ "description": "Basics movements",
+ "version": "1.0.0",
+ "min_os_version_major": 6,
+ "url": "https://raw.githubusercontent.com/Vegnics/farmbot_sequences4video/new/main/pickandplace.json",
+ "zip": "https://github.com/Vegnics/farmbot_thesis/archive/main.zip",
+ "executable": "python",
+ "args": ["farmbot_sequences4video-main/pickandplace.py"]
+}
