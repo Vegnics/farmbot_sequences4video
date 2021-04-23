@@ -79,6 +79,8 @@ pickup_gripper()
 
 for i in range(72):
   x,y = get_hole_coords(matrix,i)
+  x = x
+  y = y+11
   move_absolute((x-22,y-10,-205),(0,0,0),100)
   move_absolute((x-22,y-10,-270),(0,0,0),100)
   move_absolute((x,y,-270),(0,0,0),100)
