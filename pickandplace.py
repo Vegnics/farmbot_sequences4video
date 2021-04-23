@@ -85,12 +85,12 @@ for i in range(72):
   move_absolute((x-22,y-10,-270),(0,0,0),100)
   move_absolute((x,y,-270),(0,0,0),100)
   move_absolute((x,y,-291),(0,0,0),100)
-  device.wait(500)
+  device.wait(250)
   device.write_pin(gripper_pin,gripper_down,0)
-  device.wait(500)
+  device.wait(250)
   move_absolute((x,y,-215),(0,0,0),100)
   device.write_pin(gripper_pin,gripper_up,0)
-  device.wait(500)
+  device.wait(250)
 
 device.log(message='Process_finished', message_type='success')  
 
