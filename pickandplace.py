@@ -10,6 +10,10 @@ import os
 _veri_pin = 63
 TOOLMOUNTED = 0
 TOOLUNMOUNTED = 1
+weeder=(33,554,-401)
+gripper_pin = 4
+gripper_down = 0
+gripper_up = 1
 
 def get_hole_coords(tray_mat,seedling_num):
     ymat = seedling_num % 12
@@ -38,6 +42,18 @@ def checktool():
   device.log(message='status: {}'.format(status), message_type='success')
   return
 
+def pickup_gripper():
+  move_absolute(weeder,(0,0,0),100)
+  move_absolute(weeder,(100,0,0),100)
+  move_absolute(weeder,(100,0,100),100)
+  move_absolute(weeder,(100,0,260),100)
+  device.write_pin(gripper_pin,gripper_up,0)
+    
+def move_absolute(position,offset,speed):
+  as_position= device.assemble_coordinate(position[0],position[1],position[2])
+  as_offset=device.assemble_coordinate(offset[0],offset[1],offset[2])
+  device.move_absolute(as_position, speed=speed, offset=as_offset)
+
 
 #OBTAINING CONSTANT DATA: HOMO KERNEL, CALIBRATION PARAMETERS, DESCRIPTORS
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -57,12 +73,11 @@ matrix2=np.load(dir_path+'/'+'array2.npy')
 matrix3=np.load(dir_path+'/'+'array3.npy')
 matrix4=np.load(dir_path+'/'+'array4.npy')
 
-weeder=(33,554,-401)
-gripper_pin = 4
-gripper_down = 0
-gripper_up = 1
+
 device.set_pin_io_mode(1,gripper_pin)
-for i in range(10):
+pickup_gripper()
+
+for i in range(72):
   checktool()
   sleep(1)
 
